@@ -8,9 +8,9 @@ jobs:
   build-docker-image:
     runs-on: ubuntu-latest
     env:
-      REPO_NAME: "${{ secrets.DOCKERHUB_REPOSITORY }}"  # Docker Hub 리포지토리 이름
-      DOCKER_USERNAME: "${{ secrets.DOCKERHUB_USERNAME }}"  # Docker Hub 사용자 이름
-      DOCKER_PASSWORD: "${{ secrets.DOCKERHUB_TOKEN }}"     # Docker Hub 비밀번호/토큰
+      REPO_NAME: ${{ secrets.DOCKERHUB_REPOSITORY }}  # Docker Hub 리포지토리 이름
+      DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}  # Docker Hub 사용자 이름
+      DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}     # Docker Hub 비밀번호/토큰
 
     steps:
       - uses: actions/checkout@v3
