@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-django-deployment
+spec:
+  selector:
+    matchLabels:
+      app: devops-django-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: devops-django-app
+    spec:
+      containers:
+        - name: core
+          image: john3210of/apiserver:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000  # "containerPort" 필드명을 수정하고 들여쓰기 조정
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1000Mi
+            limits:
+              cpu: 1000m
+              memory: 1500Mi
