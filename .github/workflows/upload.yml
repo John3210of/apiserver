@@ -30,7 +30,7 @@ jobs:
             password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t $REPO_NAME:1.0 ./apiserver
+        run: docker build -t $REPO_NAME:1.0 -f ./Dockerfile ./apiserver
 
       - name: Push Docker image to Docker Hub
         run: docker push $REPO_NAME:1.0
